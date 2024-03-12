@@ -41,10 +41,33 @@ export const Signup = async (req, res) => {
     }
 };
 
-export const Login = (req, res) => {
-    res.send('Login Route');
+export const Login = async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const user = await User.findOne({ username });
+        const hashedPassword = await bcrypt.compare(
+            password,
+            user?.password || ''
+        );
+        if (!user || !hashedPassword) {
+            return res
+                .status(400)
+                .json({ message: 'Invalid username or password' });
+        }
+
+        jwtToken(user._id, res);
+
+        res.status(200).json({ message: 'User logged in successfully' });
+    } catch (error) {
+        console.log(error);
+    }
 };
 
-export const Logout = (req, res) => {
-    res.send('Logout Route');
+export const Logout = async (req, res) => {
+    try {
+        res.clearCookie('token');
+        res.status(200).json({ message: 'User logged out successfully' });
+    } catch (error) {
+        console.log(error);
+    }
 };
