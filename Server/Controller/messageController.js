@@ -39,3 +39,25 @@ export const sendMessage = async (req, res) => {
         console.log(error);
     }
 };
+
+export const getMessage = async (req, res) => {
+    try {
+        const { id: userChatId } = req.params;
+        const senderId = req.user._id;
+
+        const conversation = await Conversation.findOne({
+            participants: { $all: [senderId, userChatId] },
+        }).populate('messages');
+
+        // res.status(200).json(conversation.messages);
+
+        if (!conversation) {
+            return res.status(200).json({ message: 'No Messages' });
+        }
+        const messages = conversation.messages;
+        res.status(200).json(messages);
+    } catch (error) {
+        res.status(500).json({ message: 'Error in Message Controller' });
+        console.log(error);
+    }
+};
