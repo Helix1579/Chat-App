@@ -10,7 +10,7 @@ const Button = ({name}) => {
                     text-green-500
                     btn-sm mt-2
                     hover:bg-green-500
-                    hover:text-white'
+                    hover:text-black'
             >
                 {name}
             </button>

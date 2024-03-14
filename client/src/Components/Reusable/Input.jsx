@@ -6,11 +6,12 @@ const Input = ({ placeHolder, password = false }) => {
             type={password ? 'password' : 'text'}
             className='input 
                 input-bordered
+                input-success
                 input-md
-                w-full p-1 pl-3
+                w-full py-3 px-3
                 h-10 bg-inherit
-
-                text-green-500'
+                text-green-500
+                border-green-500'
             placeholder={placeHolder}
         />
     );
