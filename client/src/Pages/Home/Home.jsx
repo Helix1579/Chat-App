@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from '../../Components/Sidebar/Sidebar';
 import '../style.css';
+import MessageContainer from '../../Components/Message/MessageContainer';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             rounded-lg'
         >
             <Sidebar />
+            <MessageContainer />
         </div>
     );
 };
