@@ -32,15 +32,15 @@ const Signup = () => {
 
                         <a
                             href='/'
-                            className='
+                            className='w-full
                             text-xs
                             hover:underline
                             hover:text-green-500
-                            mt-2 inline-block'
+                            my-2 inline-block'
                         >
                             Have an account?
                         </a>
-                        <Button name='SignUp' />
+                        <Button block name='SignUp' />
                     </form>
                 </div>
             </div>

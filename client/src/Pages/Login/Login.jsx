@@ -43,15 +43,15 @@ const Login = () => {
 
                         <a
                             href='/'
-                            className='
+                            className=' w-full
                             text-sm
                             hover:underline
                             hover:text-green-500
-                            mt-2 inline-block'
+                            my-2 inline-block'
                         >
                             Don't have an account?
                         </a>
-                        <Button name='Login' />
+                        <Button block name='Login' />
                     </form>
                 </div>
             </div>

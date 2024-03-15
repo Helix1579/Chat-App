@@ -1,20 +1,21 @@
 import React from 'react';
 
-const Button = ({name}) => {
+const Button = ({ name, block = false }) => {
     return (
-        <div>
-            <button
-                className='btn
+        <button
+            className='btn p-0
                     btn-outline
                     btn-block
                     text-green-500
-                    btn-sm mt-2
+                    btn-sm h-full
                     hover:bg-green-500
                     hover:text-black'
-            >
-                {name}
-            </button>
-        </div>
+            style={{
+                width: block ? '100%' : '32px',
+            }}
+        >
+            {name}
+        </button>
     );
 };
 
