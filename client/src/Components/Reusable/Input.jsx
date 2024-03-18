@@ -1,8 +1,18 @@
 import React from 'react';
 
-const Input = ({ placeHolder, search = false, password = false }) => {
+const Input = ({
+    id,
+    placeHolder,
+    value,
+    onChange,
+    search = false,
+    password = false,
+}) => {
     return (
         <input
+            id={id}
+            value={value}
+            onChange={onChange}
             type={password ? 'password' : 'text'}
             className={
                 search

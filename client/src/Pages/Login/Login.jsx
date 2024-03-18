@@ -42,16 +42,19 @@ const Login = () => {
                         </div>
 
                         <a
-                            href='/'
-                            className=' w-full
-                            text-sm
+                            href='/signup'
+                            className='text-sm
                             hover:underline
                             hover:text-green-500
                             my-2 inline-block'
                         >
                             Don't have an account?
                         </a>
-                        <Button block name='Login' />
+                        <Button
+                            block
+                            id='login'
+                            displayText='Login'
+                        />
                     </form>
                 </div>
             </div>

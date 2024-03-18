@@ -1,8 +1,13 @@
 import React from 'react';
 
-const Button = ({ name, block = false }) => {
+const Button = ({
+    id,
+    displayText,
+    block = false,
+}) => {
     return (
         <button
+            id={id}
             className='btn p-0
                     btn-outline
                     btn-block
@@ -14,7 +19,7 @@ const Button = ({ name, block = false }) => {
                 width: block ? '100%' : '32px',
             }}
         >
-            {name}
+            {displayText}
         </button>
     );
 };

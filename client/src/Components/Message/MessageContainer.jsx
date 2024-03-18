@@ -22,7 +22,7 @@ const NoChatSelected = () => {
                 gap-2'
             >
                 <p>Welcome 🧑‍💻!</p>
-                <p>Select a cha to start messaging</p>
+                <p>Select a chat to start messaging</p>
                 <TiMessages
                     className='text-2xl
                     md:text-4xl
