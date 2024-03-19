@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
 import axios from 'axios';
+import { useAuthContext } from '../Context/AuthContext';
 
 function handleInputErrors({
     name,
@@ -11,17 +11,23 @@ function handleInputErrors({
     gender,
 }) {
     if (!name || !username || !password || !confirmPassword || !gender) {
-        toast.error('Please fill in all fields');
+        toast.error('Please fill in all fields', {
+            theme: 'dark'
+        });
         return false;
     }
 
     if (password !== confirmPassword) {
-        toast.error('Passwords do not match');
+        toast.error('Passwords do not match', {
+            theme: 'dark'
+        });
         return false;
     }
 
     if (password.length < 6) {
-        toast.error('Password must be at least 6 characters');
+        toast.error('Password must be at least 6 characters', {
+            theme: 'dark',
+        });
         return false;
     }
 
@@ -30,6 +36,7 @@ function handleInputErrors({
 
 const useSignup = () => {
     const [Loading, setLoading] = useState(false);
+    const { setUser } = useAuthContext();
 
     const signup = async (FormData) => {
         console.log(FormData);
@@ -44,11 +51,17 @@ const useSignup = () => {
             })
             .then((res) => {
                 console.log(res);
-                toast.success('Account created successfully');
+                localStorage.setItem('user', JSON.stringify(res.data));
+                setUser(res.data);
+                toast.success('Account created successfully', {
+                    theme: 'dark',
+                });
             })
             .catch((error) => {
                 console.log(error.response.data);
-                toast.error('An error occurred', { theme: 'dark' });
+                toast.error('An error occurred', {
+                    theme: 'dark',
+                });
             })
             .finally(() => {
                 setLoading(false);

@@ -48,8 +48,8 @@ const MessageContainer = () => {
                 <>
                     <div
                         className='px-2
-                    py-1 mb-2 w-full
-                    bg-green-600'
+                        py-1 mb-2 w-full
+                        bg-green-600'
                     >
                         <span className='label-text text-black'>To : </span>
                         <span className='label-text text-black'>John Doe</span>

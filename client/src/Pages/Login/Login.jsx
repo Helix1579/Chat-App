@@ -5,58 +5,35 @@ import Button from '../../Components/Reusable/Button';
 
 const Login = () => {
     return (
-        <div
-        // className='flex
-        // flex-col
-        // items-center
-        // justify-center
-        // min-w-96
-        // mx-auto'
-        >
-            <div className='container'>
-                <div
-                    className='data-container'
-                    // 'w-full
-                    // rounded-xl
-                    // p-5 shadow-md
-                    // bg-gray-400
-                    // bg-clip-padding
-                    // backdrop-filter
-                    // backdrop-blur-lg
-                    // bg-opacity-0'
-                >
-                    <h1
-                        className='text-2xl
+        <div className='container'>
+            <div className='data-container'>
+                <h1
+                    className='text-2xl
                             font-semibold
                             text-center mb-4
                             text-green-500'
-                    >
-                        Login
-                        <span className='text-white'> Chat App</span>
-                    </h1>
+                >
+                    Login
+                    <span className='text-white'> Chat App</span>
+                </h1>
 
-                    <form>
-                        <div className='gap-2 flex flex-col'>
-                            <Input placeHolder='Username' />
-                            <Input placeHolder='Password' password />
-                        </div>
+                <form>
+                    <div className='gap-2 flex flex-col'>
+                        <Input placeHolder='Username' />
+                        <Input placeHolder='Password' password />
+                    </div>
 
-                        <a
-                            href='/signup'
-                            className='text-sm
+                    <a
+                        href='/signup'
+                        className='text-sm
                             hover:underline
                             hover:text-green-500
                             my-2 inline-block'
-                        >
-                            Don't have an account?
-                        </a>
-                        <Button
-                            block
-                            id='login'
-                            displayText='Login'
-                        />
-                    </form>
-                </div>
+                    >
+                        Don't have an account?
+                    </a>
+                    <Button block id='login' displayText='Login' />
+                </form>
             </div>
         </div>
     );

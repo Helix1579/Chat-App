@@ -34,7 +34,12 @@ export const Signup = async (req, res) => {
         } else {
             jwtToken(newUser._id, res);
             await newUser.save();
-            res.status(201).json({ message: 'User created successfully' });
+            res.status(201).json({
+                _id: newUser._id,
+                fullName: newUser.name,
+                username: newUser.username,
+                profilePic: newUser.profilePic,
+            });
         }
     } catch (error) {
         console.log(error);
