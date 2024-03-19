@@ -4,12 +4,13 @@ const Conversation = () => {
     return (
         <div
             className='flex
-                gap-2
+                gap-1
                 items-center
                 hover:bg-green-500
                 hover:text-black
                 rounded
-                p-2 py-1
+                py-1
+                w-full
                 cursor-pointer'
         >
             <div className='avatar online'>
@@ -29,7 +30,7 @@ const Conversation = () => {
                     className='flex gap-3 
                     justify-between'
                 >
-                    <p className=''>Conversation 1</p>
+                    <p className='text-sm'>Conversation 1</p>
                     <span className='text-md'>🍻</span>
                 </div>
             </div>

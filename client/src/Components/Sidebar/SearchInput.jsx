@@ -9,10 +9,10 @@ const SearchInput = () => {
             <form
                 className='flex
                     items-center
-                    gap-2'
+                    gap-2 '
             >
                 <Input search placeHolder='Search...' />
-                <Button name={<MdOutlineSearch size='16px'/>}>
+                <Button displayText={<MdOutlineSearch size='16px'/>}>
                 </Button>
             </form>
         </div>
