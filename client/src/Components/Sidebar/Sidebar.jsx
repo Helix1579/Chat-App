@@ -7,10 +7,10 @@ const Sidebar = () => {
     return (
         <div
             className='flex pr-2
-            flex-col
-            min-w-44
-            border-r
-            border-green-500'
+                flex-col
+                min-w-44
+                border-r
+                border-green-500'
         >
             <SearchInput />
             <div className='divider px-3'></div>

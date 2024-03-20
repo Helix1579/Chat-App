@@ -12,17 +12,17 @@ const App = () => {
     return (
         <div
             className='p-3
-        h-screen
-        flex
-        items-center
-        justify-center'
+                h-screen
+                flex
+                items-center
+                justify-center'
         >
             <AuthProvider>
                 <BrowserRouter>
                     <Routes>
                         <Route
                             path='/'
-                            element={User ? <Home /> : <Navigate to='/login' />}
+                            element={User ? <Home /> : <Navigate to={'/login'} />}
                         />
                         <Route
                             path='/signup'

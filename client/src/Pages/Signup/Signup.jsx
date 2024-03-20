@@ -4,7 +4,6 @@ import Input from '../../Components/Reusable/Input';
 import Button from '../../Components/Reusable/Button';
 import CheckBox from '../../Components/Reusable/CheckBox';
 import useSignup from '../../Hooks/useSignup';
-import { ToastContainer } from 'react-toastify';
 
 const Signup = () => {
     const [FormData, setFormData] = useState({
@@ -90,13 +89,18 @@ const Signup = () => {
                         <a
                             href='/login'
                             className='text-xs
-                            hover:underline
-                            hover:text-green-500
-                            my-2 inline-block'
+                                hover:underline
+                                hover:text-green-500
+                                my-2 inline-block'
                         >
                             Have an account?
                         </a>
-                        <Button block id='signup' displayText='Sign Up' />
+                        <Button
+                            block
+                            id='signup'
+                            displayText='Sign Up'
+                            disabled={Loading}
+                        />
                     </form>
                 </div>
             </div>

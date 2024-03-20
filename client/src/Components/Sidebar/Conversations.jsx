@@ -5,9 +5,9 @@ const Conversations = () => {
     return (
         <div
             className='pr-1
-            flex flex-col
-            w-full
-            overflow-auto'
+                flex flex-col
+                w-full
+                overflow-auto'
         >
             <Conversation />
             <Conversation />
