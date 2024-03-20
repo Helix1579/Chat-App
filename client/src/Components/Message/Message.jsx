@@ -28,34 +28,6 @@ const Message = () => {
             </div>
             <div className='chat-footer opacity-50 text-xs'>Seen at 12:46</div>
         </div>
-        // <div className='chat chat-end'>
-        //     <div className='chat-image avatar'>
-        //         <div className='w-8 rounded-full'>
-        //             <img
-        //                 src='https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png'
-        //                 alt='User Avatar'
-        //             />
-        //         </div>
-        //     </div>
-        //     <div
-        //         className={`chat-bubble
-        //         text-black
-        //         bg-green-500
-        //         px-5 py-0
-        //         flex
-        //         items-center`}
-        //     >
-        //         Message
-        //     </div>
-        //     <div
-        //         className='chat-footer
-        //         opacity-50
-        //         text-xs
-        //         flex
-        //         gap-1
-        //         items-center'
-        //     >Time</div>
-        // </div>
     );
 };
 

@@ -12,7 +12,7 @@ const CheckBox = ({
             <div className='form-control'>
                 <label
                     className='cursor-pointer 
-                    label gap-2'
+                        label gap-2'
                 >
                     <span className='lable-text text-sm'>{displayText}</span>
                     <input

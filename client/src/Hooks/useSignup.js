@@ -12,14 +12,14 @@ function handleInputErrors({
 }) {
     if (!name || !username || !password || !confirmPassword || !gender) {
         toast.error('Please fill in all fields', {
-            theme: 'dark'
+            theme: 'dark',
         });
         return false;
     }
 
     if (password !== confirmPassword) {
         toast.error('Passwords do not match', {
-            theme: 'dark'
+            theme: 'dark',
         });
         return false;
     }
@@ -39,7 +39,7 @@ const useSignup = () => {
     const { setUser } = useAuthContext();
 
     const signup = async (FormData) => {
-        console.log(FormData);
+        console.log('SignUp FormData : ' + FormData);
         const success = handleInputErrors(FormData);
         if (!success) return;
 
@@ -59,12 +59,10 @@ const useSignup = () => {
             })
             .catch((error) => {
                 console.log(error.response.data);
+                setLoading(false);
                 toast.error('An error occurred', {
                     theme: 'dark',
                 });
-            })
-            .finally(() => {
-                setLoading(false);
             });
     };
 
