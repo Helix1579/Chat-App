@@ -1,18 +1,21 @@
 import { createContext, useContext, useState } from 'react';
 
-export const AuthContext = createContext();
+const AuthContext = createContext();
 
 export const useAuthContext = () => {
     return useContext(AuthContext);
 };
 
 export const AuthProvider = ({ children }) => {
-    const [User, setUser] = useState(
+    const [AuthUser, setAuthUser] = useState(
         JSON.parse(localStorage.getItem('user')) || null
     );
 
+    console.log('Auth Context : ')
+    console.log(AuthUser)
+
     return (
-        <AuthContext.Provider value={{ User, setUser }}>
+        <AuthContext.Provider value={{ AuthUser, setAuthUser }}>
             {children}
         </AuthContext.Provider>
     );

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const useLogout = () => {
     const [Loading, setLoading] = useState(false);
-    const { setUser } = useAuthContext();
+    const { setAuthUser } = useAuthContext();
 
     const logout = async () => {
         console.log('Logout FormData : ' + FormData);
@@ -18,7 +18,10 @@ const useLogout = () => {
             .then((res) => {
                 console.log(res);
                 localStorage.removeItem('user');
-                setUser(null);
+                setAuthUser(null);
+                toast.success('Logged out successfully', {
+                    theme: 'dark',
+                });
             })
             .catch((error) => {
                 console.log(error.response);

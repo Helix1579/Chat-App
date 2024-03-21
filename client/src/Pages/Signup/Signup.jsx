@@ -5,7 +5,7 @@ import Button from '../../Components/Reusable/Button';
 import CheckBox from '../../Components/Reusable/CheckBox';
 import useSignup from '../../Hooks/useSignup';
 
-const Signup = () => {
+const SignUp = () => {
     const [FormData, setFormData] = useState({
         name: '',
         username: '',
@@ -108,4 +108,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default SignUp;
