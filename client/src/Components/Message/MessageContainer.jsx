@@ -7,26 +7,26 @@ const NoChatSelected = () => {
     return (
         <div
             className='flex
-            items-center
-            justify-center
-            w-full
-            h-full'
+                items-center
+                justify-center
+                w-full
+                h-full'
         >
             <div
                 className='px-4 text-center
-                sm:text-lg
-                md:text-xl
-                text-green-200
-                flex flex-col
-                items-center
-                gap-2'
+                    sm:text-lg
+                    md:text-xl
+                    text-green-200
+                    flex flex-col
+                    items-center
+                    gap-2'
             >
                 <p>Welcome 🧑‍💻!</p>
-                <p>Select a cha to start messaging</p>
+                <p>Select a chat to start messaging</p>
                 <TiMessages
                     className='text-2xl
-                    md:text-4xl
-                    text-center'
+                        md:text-4xl
+                        text-center'
                 />
             </div>
         </div>
@@ -38,9 +38,9 @@ const MessageContainer = () => {
     return (
         <div
             className='flex 
-            flex-col
-            w-full
-            pl-2'
+                flex-col
+                w-full
+                pl-2'
         >
             {noChat ? (
                 <NoChatSelected />
@@ -48,8 +48,8 @@ const MessageContainer = () => {
                 <>
                     <div
                         className='px-2
-                    py-1 mb-2 w-full
-                    bg-green-600'
+                            py-1 mb-2 w-full
+                            bg-green-600'
                     >
                         <span className='label-text text-black'>To : </span>
                         <span className='label-text text-black'>John Doe</span>

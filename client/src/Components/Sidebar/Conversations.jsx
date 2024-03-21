@@ -4,9 +4,10 @@ import Conversation from './Conversation';
 const Conversations = () => {
     return (
         <div
-            className='py-2 pr-2
-            flex flex-col
-            overflow-auto'
+            className='pr-1
+                flex flex-col
+                w-full
+                overflow-auto'
         >
             <Conversation />
             <Conversation />

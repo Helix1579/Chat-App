@@ -9,7 +9,11 @@ const MessageInput = () => {
                 <Input placeHolder='Send a message' />
                 <button
                     type='submit'
-                    className='absolute inset-y-0 end-0 pe-4 text-green-500'
+                    className='absolute 
+                        inset-y-0 
+                        end-0 
+                        pe-4 
+                        text-green-500'
                 >
                     <BiSolidSend />
                 </button>

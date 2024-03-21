@@ -4,13 +4,14 @@ const Conversation = () => {
     return (
         <div
             className='flex
-                gap-2
-                items-center
-                hover:bg-green-500
-                hover:text-black
-                rounded
-                p-2 py-1
-                cursor-pointer'
+                    gap-1
+                    items-center
+                    hover:bg-green-500
+                    hover:text-black
+                    rounded
+                    py-1
+                    w-full
+                    cursor-pointer'
         >
             <div className='avatar online'>
                 <div className='w-9 rounded-full'>
@@ -22,14 +23,14 @@ const Conversation = () => {
             </div>
             <div
                 className='flex 
-                flex-col
-                flex-1'
+                    flex-col
+                    flex-1'
             >
                 <div
                     className='flex gap-3 
-                    justify-between'
+                        justify-between'
                 >
-                    <p className=''>Conversation 1</p>
+                    <p className='text-sm'>Conversation 1</p>
                     <span className='text-md'>🍻</span>
                 </div>
             </div>

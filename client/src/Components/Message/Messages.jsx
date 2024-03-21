@@ -4,9 +4,7 @@ import Message from './Message';
 const Messages = () => {
     return (
         <div
-            className='
-            flex flex-col
-            overflow-auto'
+            className='flex flex-col overflow-auto'
         >
             <Message />
             <Message />

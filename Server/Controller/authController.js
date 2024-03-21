@@ -34,7 +34,12 @@ export const Signup = async (req, res) => {
         } else {
             jwtToken(newUser._id, res);
             await newUser.save();
-            res.status(201).json({ message: 'User created successfully' });
+            res.status(201).json({
+                _id: newUser._id,
+                fullName: newUser.name,
+                username: newUser.username,
+                profilePic: newUser.profilePic,
+            });
         }
     } catch (error) {
         console.log(error);
@@ -57,7 +62,13 @@ export const Login = async (req, res) => {
 
         jwtToken(user._id, res);
 
-        res.status(200).json({ message: 'User logged in successfully' });
+        res.status(200).json({
+            _id: user._id,
+            fullName: user.name,
+            username: user.username,
+            profilePic: user.profilePic,
+        
+        });
     } catch (error) {
         console.log(error);
     }
