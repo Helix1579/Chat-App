@@ -36,7 +36,7 @@ function handleInputErrors({
 
 const useSignup = () => {
     const [Loading, setLoading] = useState(false);
-    const { setUser } = useAuthContext();
+    const { setAuthUser } = useAuthContext();
 
     const signup = async (FormData) => {
         console.log('SignUp FormData : ' + FormData);
@@ -52,13 +52,13 @@ const useSignup = () => {
             .then((res) => {
                 console.log(res);
                 localStorage.setItem('user', JSON.stringify(res.data));
-                setUser(res.data);
+                setAuthUser(res.data);
                 toast.success('Account created successfully', {
                     theme: 'dark',
                 });
             })
             .catch((error) => {
-                console.log(error.response.data);
+                console.log(error.response);
                 setLoading(false);
                 toast.error('An error occurred', {
                     theme: 'dark',
