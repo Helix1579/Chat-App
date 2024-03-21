@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Messages from './Messages';
 import MessageInput from './MessageInput';
 import { TiMessages } from 'react-icons/ti';
+import useConversation from '../../Zustand/useConversation';
 
 const NoChatSelected = () => {
     return (
@@ -34,7 +35,12 @@ const NoChatSelected = () => {
 };
 
 const MessageContainer = () => {
-    const noChat = true;
+    const { SelectedConversation, setSelectedConversation } = useConversation();
+    
+    useEffect(() => {
+        return () => setSelectedConversation(null);
+    }, [setSelectedConversation])
+
     return (
         <div
             className='flex 
@@ -42,7 +48,7 @@ const MessageContainer = () => {
                 w-full
                 pl-2'
         >
-            {noChat ? (
+            {!SelectedConversation ? (
                 <NoChatSelected />
             ) : (
                 <>
@@ -52,7 +58,7 @@ const MessageContainer = () => {
                             bg-green-600'
                     >
                         <span className='label-text text-black'>To : </span>
-                        <span className='label-text text-black'>John Doe</span>
+                            <span className='label-text text-black'>{ SelectedConversation.name}</span>
                     </div>
 
                     {/* Messages */}
