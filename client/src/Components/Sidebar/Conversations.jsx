@@ -5,8 +5,8 @@ import useGetConversations from '../../Hooks/useGetConversations';
 
 const Conversations = () => {
     const { Conversations, Loading } = useGetConversations();
-    console.log('Conversations : ');
-    console.log(Conversations);
+    // console.log('Conversations : ');
+    // console.log(Conversations);
     return (
         <div
             className='pr-1
