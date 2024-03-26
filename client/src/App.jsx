@@ -11,11 +11,13 @@ const App = () => {
     const { AuthUser } = useAuthContext();
     console.log({ AuthUser });
     return (
-        <div className='p-3 
-            h-screen
-            flex
-            items-center
-            justify-center'>
+        <div
+            className='p-3 
+                h-screen
+                flex
+                items-center
+                justify-center'
+        >
             <Routes>
                 <Route
                     path='/'

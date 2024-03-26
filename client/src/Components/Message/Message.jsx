@@ -1,14 +1,36 @@
 import React from 'react';
+import { useAuthContext } from '../../Context/AuthContext';
+import useConversation from '../../Zustand/useConversation';
+import { Time } from '../../Utilities/time';
 
-const Message = () => {
+const Message = ({ message }) => {
+    const { AuthUser } = useAuthContext();
+    const { SelectedConversation } = useConversation();
+    const Sender = message.senderId === AuthUser._id;
+    const chatClass = Sender ? 'chat-end' : 'chat-start';
+    const profilePic = Sender
+        ? AuthUser.profilePic
+        : SelectedConversation?.profilePic;
+
+    const time = Time(message.createdAt);
+
+    // console.log(SelectedConversation.createdAt);
+
     return (
-        <div className='chat chat-end'>
-            <div className='chat-image avatar'>
-                <div className='w-6 rounded-full mr-2'>
+        <div className={`chat ${chatClass}`}>
+            <div
+                className='chat-image
+                    avatar'
+            >
+                <div
+                    className='w-6 
+                        rounded-full
+                        mr-2'
+                >
                     <img
                         className='bg-green-500'
                         alt='Tailwind CSS chat bubble component'
-                        src='https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png'
+                        src={profilePic}
                     />
                 </div>
             </div>
@@ -24,9 +46,9 @@ const Message = () => {
                     px-3 py-0
                     bg-green-500'
             >
-                Message
+                {message.message}
             </div>
-            <div className='chat-footer opacity-50 text-xs'>Seen at 12:46</div>
+            <div className='chat-footer opacity-50 text-xs'>{time}</div>
         </div>
     );
 };
