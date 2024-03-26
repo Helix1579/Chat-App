@@ -11,8 +11,8 @@ export const AuthProvider = ({ children }) => {
         JSON.parse(localStorage.getItem('user')) || null
     );
 
-    console.log('Auth Context : ')
-    console.log(AuthUser)
+    // console.log('Auth Context : ')
+    // console.log(AuthUser)
 
     return (
         <AuthContext.Provider value={{ AuthUser, setAuthUser }}>
