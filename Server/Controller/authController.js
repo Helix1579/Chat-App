@@ -67,8 +67,8 @@ export const Login = async (req, res) => {
             fullName: user.name,
             username: user.username,
             profilePic: user.profilePic,
-        
         });
+        console.log(`Login : ` + `${user.name} Logged In`);
     } catch (error) {
         console.log(error);
     }
@@ -78,6 +78,7 @@ export const Logout = async (req, res) => {
     try {
         res.clearCookie('token');
         res.status(200).json({ message: 'User logged out successfully' });
+        console.log(`Logout : User Logged Out`);
     } catch (error) {
         console.log(error);
     }
