@@ -9,13 +9,15 @@ import { useAuthContext } from './Context/AuthContext';
 
 const App = () => {
     const { AuthUser } = useAuthContext();
-    console.log({ AuthUser });
+    console.log('AuthUser : ' , { AuthUser } );
     return (
-        <div className='p-3 
-            h-screen
-            flex
-            items-center
-            justify-center'>
+        <div
+            className='p-3 
+                h-screen
+                flex
+                items-center
+                justify-center'
+        >
             <Routes>
                 <Route
                     path='/'

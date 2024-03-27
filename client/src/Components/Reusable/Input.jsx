@@ -14,11 +14,16 @@ const Input = ({
             value={value}
             onChange={onChange}
             type={password ? 'password' : 'text'}
-            className={
-                search
-                    ? 'input input-bordered input-success input-sm w-full py-3 px-3 h-8 bg-inherit text-green-500 border-green-500'
-                    : 'input input-bordered input-success input-sm w-full py-3 px-3 h-10 bg-inherit text-green-500 border-green-500'
-            }
+            className={`input 
+                    input-bordered
+                    input-success
+                    input-sm
+                    w-full
+                    py-3 px-3
+                    bg-inherit
+                    text-green-500
+                    border-green-500
+                    ${search ? 'h-8' : 'h-10'}`}
             placeholder={placeHolder}
         />
     );

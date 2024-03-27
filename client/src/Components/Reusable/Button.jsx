@@ -3,8 +3,8 @@ import React from 'react';
 const Button = ({
     id,
     displayText,
-    block = false,
     disabled,
+    block = false,
 }) => {
     return (
         <button

@@ -55,7 +55,7 @@ const Login = () => {
                             block
                             id='login'
                             displayText='Login'
-                            // disabled={Loading}
+                            disabled={Loading}
                         />
                     </form>
                 </div>

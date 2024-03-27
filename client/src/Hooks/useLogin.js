@@ -12,9 +12,7 @@ const useLogin = () => {
             username,
             password,
         };
-        console.log(data);
-        // const success = handleInputErrors(FormData);
-        // if (!success) return;
+        // console.log(data);
 
         setLoading(true);
 
@@ -23,42 +21,13 @@ const useLogin = () => {
                 withCredentials: true,
             })
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 localStorage.setItem('user', JSON.stringify(res.data));
                 setAuthUser(res.data);
                 toast.success('Logged in successfully', {
                     theme: 'dark',
                 });
             })
-            // .catch((error) => {
-            //     console.log(error.response.data);
-            //     setLoading(false);
-            //     toast.error('Invalid Username or Password', {
-            //         theme: 'dark',
-            //     });
-            // });
-        // console.log(
-        //     'UseLogin :-\n \tUsername : ' + username,
-        //     '\n\tPassword : ' + password
-        // );
-        // setLoading(true);
-
-        // await axios
-        //     .post(
-        //         'http://localhost:8080/api/auth/login',
-        //         { username, password },
-        //         {
-        //             withCredentials: true,
-        //         }
-        //     )
-        //     .then((res) => {
-        //         localStorage.setItem('user', JSON.stringify(res.data));
-        //         // console.log('UserLogin : ' + res.data);
-        //         setUser(res.data);
-        //         toast.success('Logged in successfully', {
-        //             theme: 'dark',
-        //         });
-        //     })
             .catch((error) => {
                 console.log(error);
                 setLoading(false);

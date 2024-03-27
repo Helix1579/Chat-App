@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Messages from './Messages';
 import MessageInput from './MessageInput';
 import { TiMessages } from 'react-icons/ti';
+import useConversation from '../../Zustand/useConversation';
+import { useAuthContext } from '../../Context/AuthContext';
 
 const NoChatSelected = () => {
+    const { AuthUser } = useAuthContext();
     return (
         <div
             className='flex
@@ -21,7 +24,7 @@ const NoChatSelected = () => {
                     items-center
                     gap-2'
             >
-                <p>Welcome 🧑‍💻!</p>
+                <p>Welcome {AuthUser.fullName} 🧑‍💻!</p>
                 <p>Select a chat to start messaging</p>
                 <TiMessages
                     className='text-2xl
@@ -34,15 +37,21 @@ const NoChatSelected = () => {
 };
 
 const MessageContainer = () => {
-    const noChat = true;
+    const { SelectedConversation, setSelectedConversation } = useConversation();
+
+    useEffect(() => {
+        return () => setSelectedConversation(null);
+    }, [setSelectedConversation]);
+
     return (
         <div
             className='flex 
                 flex-col
                 w-full
-                pl-2'
+                pl-2 
+                justify-between'
         >
-            {noChat ? (
+            {!SelectedConversation ? (
                 <NoChatSelected />
             ) : (
                 <>
@@ -52,7 +61,9 @@ const MessageContainer = () => {
                             bg-green-600'
                     >
                         <span className='label-text text-black'>To : </span>
-                        <span className='label-text text-black'>John Doe</span>
+                        <span className='label-text text-black'>
+                            {SelectedConversation.name}
+                        </span>
                     </div>
 
                     {/* Messages */}
