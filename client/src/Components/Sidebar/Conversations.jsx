@@ -4,7 +4,6 @@ import {getRandomEmoji} from '../../Utilities/emoji';
 import useGetConversations from '../../Hooks/useGetConversations';
 
 const Conversations = () => {
-    // console.log('Conversations Sidebar : \n', Conversations);
     
     const { Conversations, Loading } = useGetConversations();
 

@@ -5,11 +5,10 @@ import authRoutes from './Routes/authRoutes.js';
 import userRoutes from './Routes/userRoutes.js';
 import messageRoutes from './Routes/messageRoutes.js';
 import connectDB from './Database/mongodb.js';
-
+import { app, server } from './Sockets/sockets.js';
 
 dotenv.config();
 
-const app = express();
 app.use(express.json());
 
 app.use((req, res, next) => {
@@ -42,7 +41,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/user', userRoutes);
 
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
     connectDB();
     console.log(`Server is running on port ${process.env.PORT}`);
 });

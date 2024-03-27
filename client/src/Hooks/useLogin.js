@@ -12,7 +12,7 @@ const useLogin = () => {
             username,
             password,
         };
-        console.log(data);
+        // console.log(data);
 
         setLoading(true);
 
@@ -21,7 +21,7 @@ const useLogin = () => {
                 withCredentials: true,
             })
             .then((res) => {
-                console.log(res);
+                // console.log(res);
                 localStorage.setItem('user', JSON.stringify(res.data));
                 setAuthUser(res.data);
                 toast.success('Logged in successfully', {
